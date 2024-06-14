@@ -30,7 +30,7 @@ int main() {
 //ll_input() Function
 void ll_input(){
     int in_ID, in_value;
-    printf("\tID, value: "); scanf("%d %d",&in_ID, &in_value);
+    printf("\tID, value: "); scanf("%d %d4",&in_ID, &in_value);
     ptr = (struct NODE *)malloc(sizeof(struct NODE));
     if (head == NULL) {head = ptr;} else {tail->next = ptr;}
     ptr->ID = in_ID;

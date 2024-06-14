@@ -69,13 +69,18 @@ void ll_delete(){
     int delete_ID;
     printf("\tID for delete: "); scanf("%d", &delete_ID);
     ptr = head;
-    if(ptr -> ID == delete_ID) { //Çìµå¸¦ ¾ø¾Ù ¶§
+    if(ptr -> ID == delete_ID) { //ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
         head = ptr -> next;
+        if(head != NULL){
+            head->previous = NULL;
+        }
+
         free(ptr);
-        head->previous = NULL;
+        
         ll_print();
         return;
     }
+    ptr = ptr -> next;
     while(ptr != NULL){
         if(ptr -> ID == delete_ID){
             if(ptr -> next != NULL) {
